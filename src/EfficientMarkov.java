@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.HashMap;
 
 public class EfficientMarkov extends MarkovModel {
@@ -54,7 +55,7 @@ public class EfficientMarkov extends MarkovModel {
 		
 	
 	
-	public ArrayList<String> getFollows(String key){
+	public ArrayList<String> getFollows(String key) throws NoSuchElementException{
 		ArrayList<String> value = myMap.get(key);
 		return value;
 	}

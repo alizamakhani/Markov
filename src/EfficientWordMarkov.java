@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.NoSuchElementException;
+import java.util.TreeMap;
 
 public class EfficientWordMarkov extends WordMarkovModel{
 	Map<WordGram, ArrayList<String>> myMap;
@@ -33,7 +35,7 @@ public class EfficientWordMarkov extends WordMarkovModel{
 			pos+=1;
 		}
 	}
-	public ArrayList<String> getFollows(WordGram key){
+	public ArrayList<String> getFollows(WordGram key) throws NoSuchElementException{
 		return myMap.get(key);
 	}
 }
