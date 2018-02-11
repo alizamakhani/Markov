@@ -76,4 +76,28 @@ public class WordGramTester {
 		assertEquals("shift add length",as.length() == a.length(),true);
 	}
 
+	@Test
+	public void testToString(){
+		String[] words = {"apple", "zebra", "mongoose", "deer", "peacock", "blueberry"};
+		WordGram a = new WordGram(words,0,6);
+		WordGram b = new WordGram(words,2,3);
+		WordGram a2 = new WordGram(words,3,0);
+		WordGram b2 = new WordGram(words,0,4);
+		assertEquals(a.toString(), "apple zebra mongoose deer peacock blueberry");
+		assertEquals(b.toString(), "mongoose deer peacock");
+		assertEquals(a2.toString(), "");
+		assertEquals(b2.toString(), "apple zebra mongoose deer");
+	}
+	
+	public void testShiftAdd() {
+		String[] words = {"apple", "zebra", "mongoose", "deer", "peacock", "blueberry"};
+		WordGram a = new WordGram(words,0,6);
+		WordGram b = new WordGram(words,2,3);
+		WordGram a2 = new WordGram(words,3,0);
+		WordGram b2 = new WordGram(words,0,4);
+		assertEquals(a.shiftAdd("banana").toString(), "zebra mongoose deer peacock blueberry banana");
+		assertEquals(b.shiftAdd("banana").toString(), "deer peacock banana");
+		assertEquals(a2.shiftAdd("banana").toString(), "");
+		assertEquals(b2.shiftAdd("banana").toString(), "zebra mongoose deer banana");
+	}
 }

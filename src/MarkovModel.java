@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.Random;
 
 public class MarkovModel  implements MarkovInterface<String> {

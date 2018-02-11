@@ -9,7 +9,7 @@ public class MarkovTest {
 
 	private MarkovInterface<String> getModel(int order) {
 		// TODO: change to EfficientMarkov
-		return new MarkovModel(order);
+		return new EfficientMarkov(order);
 	}
 	
 
@@ -47,8 +47,9 @@ public class MarkovTest {
 		assertTrue("This test checks if MarkovModel makes a correct " + 
 				   "Ngram using a simple source",
 				   output.contains("abb"));
-		assertTrue("This test checks if MarkovModel makes a correct " + "Ngram using a simple source",
-					output.contains("bba"));
+		assertTrue("This test checks if MarkovModel makes a correct " + 
+				   "Ngram using a simple source",
+				   output.contains("bba"));
 
 	}
 
