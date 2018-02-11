@@ -35,7 +35,10 @@ public class EfficientWordMarkov extends WordMarkovModel{
 			pos+=1;
 		}
 	}
-	public ArrayList<String> getFollows(WordGram key) throws NoSuchElementException{
+	public ArrayList<String> getFollows(WordGram key){
+		if (!myMap.containsKey(key)) {
+			throw new NoSuchElementException("this key does not exist");
+		}
 		return myMap.get(key);
 	}
 }

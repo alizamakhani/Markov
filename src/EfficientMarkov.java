@@ -55,7 +55,10 @@ public class EfficientMarkov extends MarkovModel {
 		
 	
 	
-	public ArrayList<String> getFollows(String key) throws NoSuchElementException{
+	public ArrayList<String> getFollows(String key){
+		if (!myMap.containsKey(key)) {
+			throw new NoSuchElementException("this key does not exist");
+		}
 		ArrayList<String> value = myMap.get(key);
 		return value;
 	}
